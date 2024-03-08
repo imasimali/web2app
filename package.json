@@ -6,12 +6,15 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "build-apk": "eas build -p android"
   },
   "dependencies": {
-    "expo": "~50.0.11",
-    "react": "18.2.0",
-    "react-native-webview": "13.6.4"
+    "eas-cli": "^7.3.0",
+    "expo": "^50.0.11",
+    "expo-status-bar": "^1.11.1",
+    "react": "^18.2.0",
+    "react-native-webview": "^13.6.4"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

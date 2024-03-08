@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, ActivityIndicator, BackHandler } from "react-native";
 import { WebView } from "react-native-webview";
+import { StatusBar } from "expo-status-bar";
 
 export default function App() {
   const [canGoBack, setCanGoBack] = useState(false);
@@ -21,14 +22,17 @@ export default function App() {
   }, [canGoBack]);
 
   return (
-    <WebView
-      style={styles.container}
-      source={{ uri: "https://shades-app.qp7grp.easypanel.host" }}
-      startInLoadingState={true}
-      renderLoading={() => <ActivityIndicator color="#0000ff" />}
-      onNavigationStateChange={(navState) => setCanGoBack(navState.canGoBack)}
-      ref={(ref) => (this.webview = ref)}
-    />
+    <>
+      <StatusBar style="auto" />
+      <WebView
+        style={styles.container}
+        source={{ uri: "https://shades-app.qp7grp.easypanel.host" }}
+        startInLoadingState={true}
+        renderLoading={() => <ActivityIndicator color="#0000ff" />}
+        onNavigationStateChange={(navState) => setCanGoBack(navState.canGoBack)}
+        ref={(ref) => (this.webview = ref)}
+      />
+    </>
   );
 }
 
