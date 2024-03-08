@@ -10,10 +10,11 @@
     "build-apk": "eas build -p android"
   },
   "dependencies": {
-    "eas-cli": "^7.3.0",
-    "expo": "^50.0.11",
-    "expo-status-bar": "^1.11.1",
     "react": "^18.2.0",
+    "expo": "^50.0.11",
+    "eas-cli": "^7.3.0",
+    "expo-updates": "~0.24.11",
+    "expo-status-bar": "^1.11.1",
     "react-native-webview": "^13.6.4"
   },
   "devDependencies": {

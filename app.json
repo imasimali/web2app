@@ -11,7 +11,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -30,6 +32,12 @@
         "projectId": "f316713d-986c-4f27-9905-fee282081cf9"
       }
     },
-    "owner": "imasimali"
+    "owner": "imasimali",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/f316713d-986c-4f27-9905-fee282081cf9"
+    }
   }
 }
