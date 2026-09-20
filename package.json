@@ -1,24 +1,31 @@
 {
-  "name": "web2app",
+  "name": "asimali",
   "version": "1.0.0",
-  "main": "node_modules/expo/AppEntry.js",
+  "main": "index.js",
+  "private": true,
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web",
-    "build-apk": "eas build -p android"
+    "doctor": "npx expo-doctor",
+    "build:preview": "eas build --platform android --profile preview",
+    "build:production": "eas build --platform android --profile production",
+    "submit": "eas submit --platform android --profile production"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "expo": "^50.0.11",
-    "eas-cli": "^7.3.0",
-    "expo-updates": "~0.24.11",
-    "expo-status-bar": "^1.11.1",
-    "react-native-webview": "^13.6.4"
+    "@react-native-community/netinfo": "12.0.1",
+    "expo": "~57.0.24",
+    "expo-splash-screen": "~57.0.9",
+    "expo-status-bar": "~57.0.1",
+    "expo-updates": "~57.0.23",
+    "expo-web-browser": "~57.0.3",
+    "react": "19.2.3",
+    "react-native": "0.86.3",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-webview": "13.16.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
-  },
-  "private": true
+    "@babel/core": "^7.26.0",
+    "eas-cli": "^24.7.0"
+  }
 }
