@@ -30,6 +30,7 @@ export default function App() {
 
   const webview = useRef(null);
   const lastBackPress = useRef(0);
+  const wasOffline = useRef(false);
 
   const reload = useCallback((next) => {
     if (next) setUrl(next);
@@ -60,11 +61,15 @@ export default function App() {
     };
   }, [reload]);
 
+  // Only an offline-to-online transition should retry on its own. NetInfo
+  // fires once on subscribe with the current state, so reacting to "online"
+  // alone would retry forever whenever the site is down but the phone is not.
   useEffect(() => {
     return NetInfo.addEventListener((state) => {
       const online = Boolean(state.isConnected);
       setIsConnected(online);
-      if (online && status === "failed") reload();
+      if (online && wasOffline.current && status === "failed") reload();
+      wasOffline.current = !online;
     });
   }, [status, reload]);
 
