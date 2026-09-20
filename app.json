@@ -7,11 +7,17 @@
     "icon": "./assets/icon.png",
     "scheme": "asimali",
     "userInterfaceStyle": "automatic",
-    "assetBundlePatterns": ["**/*"],
+    "backgroundColor": "#222A36",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "net.asimali.portfolio",
-      "associatedDomains": ["applinks:asimali.net", "applinks:www.asimali.net"]
+      "associatedDomains": [
+        "applinks:asimali.net",
+        "applinks:www.asimali.net"
+      ]
     },
     "android": {
       "package": "net.asimali.portfolio",
@@ -25,10 +31,19 @@
         {
           "action": "VIEW",
           "autoVerify": true,
-          "category": ["BROWSABLE", "DEFAULT"],
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ],
           "data": [
-            { "scheme": "https", "host": "asimali.net" },
-            { "scheme": "https", "host": "www.asimali.net" }
+            {
+              "scheme": "https",
+              "host": "asimali.net"
+            },
+            {
+              "scheme": "https",
+              "host": "www.asimali.net"
+            }
           ]
         }
       ]
