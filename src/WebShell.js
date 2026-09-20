@@ -46,7 +46,12 @@ const THEME_PROBE = `
   var options = { attributes: true, attributeFilter: ['class', 'style', 'data-theme'] };
   observer.observe(document.documentElement, options);
   observer.observe(document.body, options);
+
+  // Sample on startup too, not just on mutation. A site that restores a saved
+  // theme does it before this script runs, so there is no mutation to react
+  // to, and the colour can still be settling when we take the first reading.
   report();
+  watch(25);
 })();
 true;
 `;
