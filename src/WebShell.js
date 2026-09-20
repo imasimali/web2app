@@ -12,16 +12,37 @@ const THEME_PROBE = `
 (function () {
   if (window.__shellProbe) return;
   window.__shellProbe = true;
+
   var last = null;
+  function read() {
+    return window.getComputedStyle(document.body).backgroundColor;
+  }
   function report() {
-    var background = window.getComputedStyle(document.body).backgroundColor;
-    if (background === last) return;
-    last = background;
+    var value = read();
+    if (value === last) return;
+    last = value;
     window.ReactNativeWebView.postMessage(
-      JSON.stringify({ type: 'background', value: background })
+      JSON.stringify({ type: 'background', value: value })
     );
   }
-  var observer = new MutationObserver(report);
+
+  // The class flips before the colour does: a themed site can hold the old
+  // background for the length of its transition delay (asimali.net waits a
+  // full second, then steps). Equality between two reads does not mean
+  // settled, it usually means the change has not started, so just sample
+  // across a window wide enough to catch it. report() dedupes, so this
+  // emits exactly once per actual change.
+  var pending = null;
+  function watch(remaining) {
+    clearTimeout(pending);
+    if (remaining <= 0) return;
+    pending = setTimeout(function () {
+      report();
+      watch(remaining - 1);
+    }, 100);
+  }
+
+  var observer = new MutationObserver(function () { watch(25); });
   var options = { attributes: true, attributeFilter: ['class', 'style', 'data-theme'] };
   observer.observe(document.documentElement, options);
   observer.observe(document.body, options);
