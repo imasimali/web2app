@@ -8,9 +8,9 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "doctor": "npx expo-doctor",
-    "build:preview": "eas build --platform android --profile preview",
-    "build:production": "eas build --platform android --profile production",
-    "submit": "eas submit --platform android --profile production"
+    "build:preview": "npx eas-cli build --platform android --profile preview",
+    "build:production": "npx eas-cli build --platform android --profile production",
+    "submit": "npx eas-cli submit --platform android --profile production"
   },
   "dependencies": {
     "@react-native-community/netinfo": "12.0.1",
@@ -24,8 +24,5 @@
     "react-native": "0.86.3",
     "react-native-safe-area-context": "~5.7.0",
     "react-native-webview": "13.16.1"
-  },
-  "devDependencies": {
-    "eas-cli": "^24.7.0"
   }
 }
