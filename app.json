@@ -15,7 +15,6 @@
       "supportsTablet": true,
       "bundleIdentifier": "net.asimali.portfolio",
       "associatedDomains": [
-        "applinks:asimali.net",
         "applinks:www.asimali.net"
       ]
     },
@@ -41,10 +40,6 @@
             "DEFAULT"
           ],
           "data": [
-            {
-              "scheme": "https",
-              "host": "asimali.net"
-            },
             {
               "scheme": "https",
               "host": "www.asimali.net"
