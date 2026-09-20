@@ -90,8 +90,12 @@ const WebShell = forwardRef(function WebShell(
       return false;
     }
 
-    // Sub-frames (the embedded map) are the page's own business.
-    if (!request.isTopFrame || !target.startsWith("http")) return true;
+    // Sub-frames (the embedded map) are the page's own business. Only skip on
+    // an explicit false: Android leaves isTopFrame undefined at runtime despite
+    // declaring it, and a truthiness check there sends every external link
+    // straight back into the WebView. Android only fires this for the main
+    // frame anyway, so undefined is safe to treat as top-frame.
+    if (request.isTopFrame === false || !target.startsWith("http")) return true;
     if (ALLOWED_HOSTS.includes(hostOf(target))) return true;
 
     WebBrowser.openBrowserAsync(target).catch(() =>
