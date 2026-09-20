@@ -64,7 +64,7 @@
     ],
     "extra": {
       "eas": {
-        "projectId": "f316713d-986c-4f27-9905-fee282081cf9"
+        "projectId": "1ba92c10-79d5-4a09-9538-4a5ad0d54fe6"
       }
     },
     "owner": "imasimali",
@@ -72,7 +72,7 @@
       "policy": "appVersion"
     },
     "updates": {
-      "url": "https://u.expo.dev/f316713d-986c-4f27-9905-fee282081cf9"
+      "url": "https://u.expo.dev/1ba92c10-79d5-4a09-9538-4a5ad0d54fe6"
     }
   }
 }
