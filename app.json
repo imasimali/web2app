@@ -1,32 +1,52 @@
 {
   "expo": {
-    "name": "web2app",
-    "slug": "web2app",
+    "name": "Asim Ali",
+    "slug": "asimali",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "scheme": "asimali",
+    "userInterfaceStyle": "automatic",
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "net.asimali.portfolio",
+      "associatedDomains": ["applinks:asimali.net", "applinks:www.asimali.net"]
     },
     "android": {
+      "package": "net.asimali.portfolio",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#222A36"
       },
-      "package": "net.asimali.web2app"
+      "predictiveBackGestureEnabled": false,
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "category": ["BROWSABLE", "DEFAULT"],
+          "data": [
+            { "scheme": "https", "host": "asimali.net" },
+            { "scheme": "https", "host": "www.asimali.net" }
+          ]
+        }
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#222A36",
+          "image": "./assets/splash.png",
+          "imageWidth": 200,
+          "resizeMode": "contain"
+        }
+      ]
+    ],
     "extra": {
       "eas": {
         "projectId": "f316713d-986c-4f27-9905-fee282081cf9"

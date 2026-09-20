@@ -1,6 +1,7 @@
 {
   "cli": {
-    "version": ">= 7.3.0"
+    "version": ">= 24.0.0",
+    "appVersionSource": "remote"
   },
   "build": {
     "development": {
@@ -8,15 +9,24 @@
       "distribution": "internal"
     },
     "preview": {
-      "distribution": "internal"
-    },
-    "production": {
+      "distribution": "internal",
       "android": {
         "buildType": "apk"
+      }
+    },
+    "production": {
+      "autoIncrement": true,
+      "android": {
+        "buildType": "app-bundle"
       }
     }
   },
   "submit": {
-    "production": {}
+    "production": {
+      "android": {
+        "track": "internal",
+        "releaseStatus": "draft"
+      }
+    }
   }
 }
