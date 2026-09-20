@@ -20,7 +20,7 @@
       ]
     },
     "android": {
-      "package": "net.asimali.portfolio",
+      "package": "net.asimali",
       "blockedPermissions": [
         "android.permission.READ_EXTERNAL_STORAGE",
         "android.permission.WRITE_EXTERNAL_STORAGE",
